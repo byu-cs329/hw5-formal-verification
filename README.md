@@ -29,7 +29,7 @@ The starting point for the **LimitedStack** is below.
 ``` java
 class LimitedStack {
 
-   var arr : array;    // contents
+   var arr : array<int>;    // contents
    var capacity : int;   // max number of elements in stack.
    var top : int;       // The index of the top of the stack, or -1 if the stack is empty.
 
