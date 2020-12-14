@@ -24,6 +24,27 @@ Consider the class **LimitedStack**. A **LimitedStack** object represents a Stac
    * `method Push2(elem : int)`: discards the oldest element if the stack is full and then pushes the new element (uses the provided **shift** method)
    * `method Pop() returns (elem : int)`
 
+The starting point for the **LimitedStack** is below. 
+
+``` java
+class LimitedStack {
+
+   var arr : array;    // contents
+   var capacity : int;   // max number of elements in stack.
+   var top : int;       // The index of the top of the stack, or -1 if the stack is empty.
+
+
+   method Init(c : int)
+   . . .
+   {
+   capacity := c;
+   arr := new int[c];
+   top := -1;
+   } 
+   . . . 
+}
+```
+
 Formally specify and implement the methods for the **LimitedStack** class in [Dafny](https://github.com/Microsoft/dafny). There are two versions of *push* that need to be specified: `push` and `push2`. `push` only works for a non-full stack and behaves as expected. `push2` works for a non-full and full stack. If the stack is full in `push2` then the oldest element is discarded using the `shift` method provided below with its specification. The following code should prove correct in a complete specification. Additional tests may be required along the way.
 
 ``` java
