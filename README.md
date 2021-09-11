@@ -5,8 +5,7 @@ Learn Dafny and use it to write formal specifications strong enough to proof ass
 # Reading
 
 * [dafny-intro.md](https://bitbucket.org/byucs329/byu-cs-329-lecture-notes/src/master/dafny/dafny-intro.md)
-* [Dafny Guide](https://rise4fun.com/dafny/tutorialcontent/guide)
-* [Dafny Reference Manual](https://github.com/Microsoft/dafny/blob/master/Docs/DafnyRef/out/DafnyRef.pdf)
+* [Dafny Reference Manual](https://github.com/Microsoft/dafny/blob/master/docs/DafnyRef/out/DafnyRef.pdf)
 
 # Acknowledgement
 
