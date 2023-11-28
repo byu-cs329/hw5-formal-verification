@@ -4,9 +4,10 @@ Learn Dafny and use it to write formal specifications strong enough to proof ass
 
 # Reading
 
+* [dafny.org](https://dafny.org)
 * [dafny-intro.md](https://bitbucket.org/byucs329/byu-cs-329-lecture-notes/src/master/dafny/dafny-intro.md)
-* [Dafny Guide](https://rise4fun.com/dafny/tutorialcontent/guide)
-* [Dafny Reference Manual](https://github.com/Microsoft/dafny/blob/master/Docs/DafnyRef/out/DafnyRef.pdf)
+* [Dafny Tutorial](http://dafny.org/dafny/OnlineTutorial/guide.html)
+* [Dafny Reference Manual](https://dafny.org/latest/DafnyRef/DafnyRef)
 
 # Acknowledgement
 
@@ -14,7 +15,7 @@ This homework is largely the same as [this lab exercise](http://www.cse.chalmers
 
 # Problems
 
-## 1. Limited Stack (30 points)  
+## 1. Limited Stack (30 points)
 
 Consider the class **LimitedStack**. A **LimitedStack** object represents a Stack data-structure that is a queue following the last-in-first-out principle (LIFO). Additionally, it can only hold a maximum number of elements, given by the field *capacity*. The stack itself is represented by an array of *capacity* length. The current top of the stack is located at index *top*. If the stack is empty, *top* is *-1*. The stack should implement the following methods:
 
@@ -74,7 +75,7 @@ method Main(){
     var s := new LimitedStack;
     s.Init(3);
 
-    assert s.Empty() && !s.Full(); 
+    assert s.Empty() && !s.Full();
 
     s.Push(27);
     assert !s.Empty();
@@ -88,7 +89,7 @@ method Main(){
     assert s.Full();
 
     var e2 := s.Pop();
-    assert e2 == 9 && !s.Full(); 
+    assert e2 == 9 && !s.Full();
     assert s.arr[0] == 5;
 
     s.Push(e2);
@@ -97,7 +98,7 @@ method Main(){
     var e3 := s.Peek();
     assert e3 == 99;
     assert s.arr[0] == 32;
-                     
+
 }
 ```
 
@@ -107,7 +108,7 @@ The class implementation, with the Dafny annotations needed to prove it correct,
 
 The [Tokeneer](http://www.adacore.com/sparkpro/tokeneer) project is a famous large industrial case-study and benchmark set for software verification systems. It concerns the management of a high-security building with doors opened by fingerprint recognition.
 
-The real system has a very large specification that is beyond the scope of this class. The goal here is to model at a high-level a super mini-version of the Tokeneer system in Dafny and verify its correctness. 
+The real system has a very large specification that is beyond the scope of this class. The goal here is to model at a high-level a super mini-version of the Tokeneer system in Dafny and verify its correctness.
 
 Generally speaking, a user enrolls in the system at the enrollment station and receives a token. The token stores the user's fingerprint data and the user's security clearance level. Model fingerprint data as a single integer. Also, for the model, there are only three security clearance levels: Low, Medium, and High. The enrollment station tracks all users registered in the system and prevents users from being issued more than one token at a time.
 
@@ -123,7 +124,7 @@ Design the classes representing the different elements of the system:
   * ID stations corresponding to a certain door with a given security level. The state of the door and the alarm can be simply represented by booleans.
   * The enrollment station that must keep track of the users who currently have a token.
 
-The system model must include the ability to 
+The system model must include the ability to
 
    * Open the door
    * Close the door
@@ -131,7 +132,7 @@ The system model must include the ability to
    * Invalidate tokens
 
 For the contracts, start with English descriptions and then turn those in to formal statements.
-Remember that sometimes the post-conditions may depend on the input (e.g. "if the token is still valid ..., otherwise ..."). 
+Remember that sometimes the post-conditions may depend on the input (e.g. "if the token is still valid ..., otherwise ...").
 
 Be sure to add a test method to exploring various cases. Use assertions liberally to check that Dafny is able to verify the expected properties of the model.
 
